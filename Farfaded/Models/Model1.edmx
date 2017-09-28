@@ -1,0 +1,1225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="AspNetRoles_Id" />
+            <PropertyRef Name="AspNetUsers_Id" />
+          </Key>
+          <Property Name="AspNetRoles_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="AspNetUsers_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="IdFlt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBlckOfFlts">
+          <Key>
+            <PropertyRef Name="IdBlckOfFlts" />
+          </Key>
+          <Property Name="IdBlckOfFlts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlckOfFltsName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BlckOfFltsAddress" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblControls">
+          <Key>
+            <PropertyRef Name="IdControl" />
+          </Key>
+          <Property Name="IdControl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ControlName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdControlType" Type="int" Nullable="false" />
+          <Property Name="IdFlt" Type="int" Nullable="false" />
+          <Property Name="ControlValue" Type="int" Nullable="false" />
+          <Property Name="ControlValueLog" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblControlTypes">
+          <Key>
+            <PropertyRef Name="IdControlType" />
+          </Key>
+          <Property Name="IdControlType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ControlType" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblFlts">
+          <Key>
+            <PropertyRef Name="IdFlt" />
+          </Key>
+          <Property Name="IdFlt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdBlckOfFlt" Type="int" Nullable="false" />
+          <Property Name="FltName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AspNetUserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPayments">
+          <Key>
+            <PropertyRef Name="IdPayment" />
+          </Key>
+          <Property Name="IdPayment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdFlt" Type="int" Nullable="false" />
+          <Property Name="IdSrvc" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Sum" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRoles">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSrvcInFltHstrs">
+          <Key>
+            <PropertyRef Name="IdSvcInFltHstr" />
+          </Key>
+          <Property Name="IdSvcInFltHstr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdFlt" Type="int" Nullable="false" />
+          <Property Name="IdSrvc" Type="int" Nullable="false" />
+          <Property Name="Val" Type="int" Nullable="false" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSrvcInFlts">
+          <Key>
+            <PropertyRef Name="IdSrvcInFlt" />
+          </Key>
+          <Property Name="IdSrvcInFlt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdFlt" Type="int" Nullable="false" />
+          <Property Name="IdSrvc" Type="int" Nullable="false" />
+          <Property Name="Val" Type="int" Nullable="false" />
+          <Property Name="tlbServiceIdSrvc" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblTarifHstrs">
+          <Key>
+            <PropertyRef Name="IdTarifHstr" />
+          </Key>
+          <Property Name="IdTarifHstr" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdFlt" Type="int" Nullable="false" />
+          <Property Name="IdSrvc" Type="int" Nullable="false" />
+          <Property Name="Val" Type="int" Nullable="false" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tlbServices">
+          <Key>
+            <PropertyRef Name="IdSrvc" />
+          </Key>
+          <Property Name="IdSrvc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tlbTarifs">
+          <Key>
+            <PropertyRef Name="IdTarif" />
+          </Key>
+          <Property Name="IdTarif" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdFlt" Type="int" Nullable="false" />
+          <Property Name="IdSrvc" Type="int" Nullable="false" />
+          <Property Name="Val" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AspNetUserRoles_AspNetRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="AspNetRoles_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUserRoles_AspNetUsers">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1" />
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="AspNetUsers_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUsertblFlt">
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlts">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AspNetUsertblRole">
+          <End Role="tblRoles" Type="Self.tblRoles" Multiplicity="1" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRoles">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="AspNetUsers">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblControltblControlType">
+          <End Role="tblControlTypes" Type="Self.tblControlTypes" Multiplicity="1" />
+          <End Role="tblControls" Type="Self.tblControls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblControlTypes">
+              <PropertyRef Name="IdControlType" />
+            </Principal>
+            <Dependent Role="tblControls">
+              <PropertyRef Name="IdControlType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblControltblFlt">
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="1" />
+          <End Role="tblControls" Type="Self.tblControls" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlts">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblControls">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblFlttblBlckOfFlt">
+          <End Role="tblBlckOfFlts" Type="Self.tblBlckOfFlts" Multiplicity="1" />
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBlckOfFlts">
+              <PropertyRef Name="IdBlckOfFlts" />
+            </Principal>
+            <Dependent Role="tblFlts">
+              <PropertyRef Name="IdBlckOfFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPaymenttblFlt">
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="1" />
+          <End Role="tblPayments" Type="Self.tblPayments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlts">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblPayments">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPaymenttblSrvcInFlt">
+          <End Role="tblSrvcInFlts" Type="Self.tblSrvcInFlts" Multiplicity="1" />
+          <End Role="tblPayments" Type="Self.tblPayments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblSrvcInFlts">
+              <PropertyRef Name="IdSrvcInFlt" />
+            </Principal>
+            <Dependent Role="tblPayments">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSrvcInFltHstrtblFlt">
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="1" />
+          <End Role="tblSrvcInFltHstrs" Type="Self.tblSrvcInFltHstrs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlts">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblSrvcInFltHstrs">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSrvcInFltHstrtlbService">
+          <End Role="tlbServices" Type="Self.tlbServices" Multiplicity="1" />
+          <End Role="tblSrvcInFltHstrs" Type="Self.tblSrvcInFltHstrs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlbServices">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tblSrvcInFltHstrs">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSrvcInFlttblFlt">
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="1" />
+          <End Role="tblSrvcInFlts" Type="Self.tblSrvcInFlts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlts">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblSrvcInFlts">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSrvcInFlttlbService">
+          <End Role="tlbServices" Type="Self.tlbServices" Multiplicity="1" />
+          <End Role="tblSrvcInFlts" Type="Self.tblSrvcInFlts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlbServices">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tblSrvcInFlts">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTarifHstrtblFlt">
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="1" />
+          <End Role="tblTarifHstrs" Type="Self.tblTarifHstrs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlts">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblTarifHstrs">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTarifHstrtlbService">
+          <End Role="tlbServices" Type="Self.tlbServices" Multiplicity="1" />
+          <End Role="tblTarifHstrs" Type="Self.tblTarifHstrs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlbServices">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tblTarifHstrs">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlbTariftblFlt">
+          <End Role="tblFlts" Type="Self.tblFlts" Multiplicity="1" />
+          <End Role="tlbTarifs" Type="Self.tlbTarifs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlts">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tlbTarifs">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tlbTariftlbService">
+          <End Role="tlbServices" Type="Self.tlbServices" Multiplicity="1" />
+          <End Role="tlbTarifs" Type="Self.tlbTarifs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tlbServices">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tlbTarifs">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBlckOfFlts" EntityType="Self.tblBlckOfFlts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblControls" EntityType="Self.tblControls" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblControlTypes" EntityType="Self.tblControlTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblFlts" EntityType="Self.tblFlts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPayments" EntityType="Self.tblPayments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRoles" EntityType="Self.tblRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSrvcInFltHstrs" EntityType="Self.tblSrvcInFltHstrs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSrvcInFlts" EntityType="Self.tblSrvcInFlts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTarifHstrs" EntityType="Self.tblTarifHstrs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tlbServices" EntityType="Self.tlbServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tlbTarifs" EntityType="Self.tlbTarifs" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetRoles" Association="Self.FK_AspNetUserRoles_AspNetRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUserRoles_AspNetUsers" Association="Self.FK_AspNetUserRoles_AspNetUsers">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUsertblFlt" Association="Self.FK_AspNetUsertblFlt">
+            <End Role="tblFlts" EntitySet="tblFlts" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AspNetUsertblRole" Association="Self.FK_AspNetUsertblRole">
+            <End Role="tblRoles" EntitySet="tblRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblControltblControlType" Association="Self.FK_tblControltblControlType">
+            <End Role="tblControlTypes" EntitySet="tblControlTypes" />
+            <End Role="tblControls" EntitySet="tblControls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblControltblFlt" Association="Self.FK_tblControltblFlt">
+            <End Role="tblFlts" EntitySet="tblFlts" />
+            <End Role="tblControls" EntitySet="tblControls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblFlttblBlckOfFlt" Association="Self.FK_tblFlttblBlckOfFlt">
+            <End Role="tblBlckOfFlts" EntitySet="tblBlckOfFlts" />
+            <End Role="tblFlts" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPaymenttblFlt" Association="Self.FK_tblPaymenttblFlt">
+            <End Role="tblFlts" EntitySet="tblFlts" />
+            <End Role="tblPayments" EntitySet="tblPayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPaymenttblSrvcInFlt" Association="Self.FK_tblPaymenttblSrvcInFlt">
+            <End Role="tblSrvcInFlts" EntitySet="tblSrvcInFlts" />
+            <End Role="tblPayments" EntitySet="tblPayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSrvcInFltHstrtblFlt" Association="Self.FK_tblSrvcInFltHstrtblFlt">
+            <End Role="tblFlts" EntitySet="tblFlts" />
+            <End Role="tblSrvcInFltHstrs" EntitySet="tblSrvcInFltHstrs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSrvcInFltHstrtlbService" Association="Self.FK_tblSrvcInFltHstrtlbService">
+            <End Role="tlbServices" EntitySet="tlbServices" />
+            <End Role="tblSrvcInFltHstrs" EntitySet="tblSrvcInFltHstrs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSrvcInFlttblFlt" Association="Self.FK_tblSrvcInFlttblFlt">
+            <End Role="tblFlts" EntitySet="tblFlts" />
+            <End Role="tblSrvcInFlts" EntitySet="tblSrvcInFlts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSrvcInFlttlbService" Association="Self.FK_tblSrvcInFlttlbService">
+            <End Role="tlbServices" EntitySet="tlbServices" />
+            <End Role="tblSrvcInFlts" EntitySet="tblSrvcInFlts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTarifHstrtblFlt" Association="Self.FK_tblTarifHstrtblFlt">
+            <End Role="tblFlts" EntitySet="tblFlts" />
+            <End Role="tblTarifHstrs" EntitySet="tblTarifHstrs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTarifHstrtlbService" Association="Self.FK_tblTarifHstrtlbService">
+            <End Role="tlbServices" EntitySet="tlbServices" />
+            <End Role="tblTarifHstrs" EntitySet="tblTarifHstrs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlbTariftblFlt" Association="Self.FK_tlbTariftblFlt">
+            <End Role="tblFlts" EntitySet="tblFlts" />
+            <End Role="tlbTarifs" EntitySet="tlbTarifs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tlbTariftlbService" Association="Self.FK_tlbTariftlbService">
+            <End Role="tlbServices" EntitySet="tlbServices" />
+            <End Role="tlbTarifs" EntitySet="tlbTarifs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaim">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogin">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="IdFlt" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblRole" Relationship="Model.AspNetUsertblRole" FromRole="AspNetUser" ToRole="tblRole" />
+          <NavigationProperty Name="tblFlt" Relationship="Model.AspNetUsertblFlt" FromRole="AspNetUser" ToRole="tblFlt" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <EntitySet Name="tblFlts" EntityType="Model.tblFlt" />
+          <EntitySet Name="tblBlckOfFlts" EntityType="Model.tblBlckOfFlt" />
+          <EntitySet Name="tlbServices" EntityType="Model.tlbService" />
+          <EntitySet Name="tblSrvcInFlts" EntityType="Model.tblSrvcInFlt" />
+          <EntitySet Name="tblSrvcInFltHstrs" EntityType="Model.tblSrvcInFltHstr" />
+          <EntitySet Name="tblRoles" EntityType="Model.tblRole" />
+          <EntitySet Name="tlbTarifs" EntityType="Model.tlbTarif" />
+          <EntitySet Name="tblTarifHstrs" EntityType="Model.tblTarifHstr" />
+          <EntitySet Name="tblControlTypes" EntityType="Model.tblControlType" />
+          <EntitySet Name="tblControls" EntityType="Model.tblControl" />
+          <EntitySet Name="tblPayments" EntityType="Model.tblPayment" />
+          <AssociationSet Name="tblFlttblBlckOfFlt" Association="Model.tblFlttblBlckOfFlt">
+            <End Role="tblFlt" EntitySet="tblFlts" />
+            <End Role="tblBlckOfFlt" EntitySet="tblBlckOfFlts" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUsertblRole" Association="Model.AspNetUsertblRole">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="tblRole" EntitySet="tblRoles" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUsertblFlt" Association="Model.AspNetUsertblFlt">
+            <End Role="AspNetUser" EntitySet="AspNetUsers" />
+            <End Role="tblFlt" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tblSrvcInFlttblFlt" Association="Model.tblSrvcInFlttblFlt">
+            <End Role="tblSrvcInFlt" EntitySet="tblSrvcInFlts" />
+            <End Role="tblFlt" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tblSrvcInFltHstrtblFlt" Association="Model.tblSrvcInFltHstrtblFlt">
+            <End Role="tblSrvcInFltHstr" EntitySet="tblSrvcInFltHstrs" />
+            <End Role="tblFlt" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tblSrvcInFltHstrtlbService" Association="Model.tblSrvcInFltHstrtlbService">
+            <End Role="tblSrvcInFltHstr" EntitySet="tblSrvcInFltHstrs" />
+            <End Role="tlbService" EntitySet="tlbServices" />
+          </AssociationSet>
+          <AssociationSet Name="tblControltblControlType" Association="Model.tblControltblControlType">
+            <End Role="tblControl" EntitySet="tblControls" />
+            <End Role="tblControlType" EntitySet="tblControlTypes" />
+          </AssociationSet>
+          <AssociationSet Name="tblControltblFlt" Association="Model.tblControltblFlt">
+            <End Role="tblControl" EntitySet="tblControls" />
+            <End Role="tblFlt" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tblPaymenttblFlt" Association="Model.tblPaymenttblFlt">
+            <End Role="tblPayment" EntitySet="tblPayments" />
+            <End Role="tblFlt" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tblPaymenttblSrvcInFlt" Association="Model.tblPaymenttblSrvcInFlt">
+            <End Role="tblPayment" EntitySet="tblPayments" />
+            <End Role="tblSrvcInFlt" EntitySet="tblSrvcInFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tlbTariftblFlt" Association="Model.tlbTariftblFlt">
+            <End Role="tlbTarif" EntitySet="tlbTarifs" />
+            <End Role="tblFlt" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tlbTariftlbService" Association="Model.tlbTariftlbService">
+            <End Role="tlbTarif" EntitySet="tlbTarifs" />
+            <End Role="tlbService" EntitySet="tlbServices" />
+          </AssociationSet>
+          <AssociationSet Name="tblTarifHstrtblFlt" Association="Model.tblTarifHstrtblFlt">
+            <End Role="tblTarifHstr" EntitySet="tblTarifHstrs" />
+            <End Role="tblFlt" EntitySet="tblFlts" />
+          </AssociationSet>
+          <AssociationSet Name="tblTarifHstrtlbService" Association="Model.tblTarifHstrtlbService">
+            <End Role="tblTarifHstr" EntitySet="tblTarifHstrs" />
+            <End Role="tlbService" EntitySet="tlbServices" />
+          </AssociationSet>
+          <AssociationSet Name="tblSrvcInFlttlbService" Association="Model.tblSrvcInFlttlbService">
+            <End Role="tblSrvcInFlt" EntitySet="tblSrvcInFlts" />
+            <End Role="tlbService" EntitySet="tlbServices" />
+          </AssociationSet>
+          <EntitySet Name="C__MigrationHistory1" EntityType="Model.C__MigrationHistory1" />
+        </EntityContainer>
+        <EntityType Name="tblFlt">
+          <Key>
+            <PropertyRef Name="IdFlt" />
+          </Key>
+          <Property Name="IdFlt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdBlckOfFlt" Type="Int32" Nullable="false" />
+          <Property Name="FltName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblBlckOfFlt" Relationship="Model.tblFlttblBlckOfFlt" FromRole="tblFlt" ToRole="tblBlckOfFlt" />
+          <Property Name="AspNetUserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Model.AspNetUsertblFlt" FromRole="tblFlt" ToRole="AspNetUser" />
+          <NavigationProperty Name="tblSrvcInFlts" Relationship="Model.tblSrvcInFlttblFlt" FromRole="tblFlt" ToRole="tblSrvcInFlt" />
+          <NavigationProperty Name="tblSrvcInFltHstrs" Relationship="Model.tblSrvcInFltHstrtblFlt" FromRole="tblFlt" ToRole="tblSrvcInFltHstr" />
+          <NavigationProperty Name="tblControls" Relationship="Model.tblControltblFlt" FromRole="tblFlt" ToRole="tblControl" />
+          <NavigationProperty Name="tblPayments" Relationship="Model.tblPaymenttblFlt" FromRole="tblFlt" ToRole="tblPayment" />
+          <NavigationProperty Name="tlbTarifs" Relationship="Model.tlbTariftblFlt" FromRole="tblFlt" ToRole="tlbTarif" />
+          <NavigationProperty Name="tblTarifHstrs" Relationship="Model.tblTarifHstrtblFlt" FromRole="tblFlt" ToRole="tblTarifHstr" />
+        </EntityType>
+        <EntityType Name="tblBlckOfFlt">
+          <Key>
+            <PropertyRef Name="IdBlckOfFlts" />
+          </Key>
+          <Property Name="IdBlckOfFlts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BlckOfFltsName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="BlckOfFltsAddress" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblFlts" Relationship="Model.tblFlttblBlckOfFlt" FromRole="tblBlckOfFlt" ToRole="tblFlt" />
+        </EntityType>
+        <EntityType Name="tlbService">
+          <Key>
+            <PropertyRef Name="IdSrvc" />
+          </Key>
+          <Property Name="IdSrvc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblSrvcInFltHstrs" Relationship="Model.tblSrvcInFltHstrtlbService" FromRole="tlbService" ToRole="tblSrvcInFltHstr" />
+          <NavigationProperty Name="tlbTarifs" Relationship="Model.tlbTariftlbService" FromRole="tlbService" ToRole="tlbTarif" />
+          <NavigationProperty Name="tblTarifHstrs" Relationship="Model.tblTarifHstrtlbService" FromRole="tlbService" ToRole="tblTarifHstr" />
+          <NavigationProperty Name="tblSrvcInFlts" Relationship="Model.tblSrvcInFlttlbService" FromRole="tlbService" ToRole="tblSrvcInFlt" />
+        </EntityType>
+        <EntityType Name="tblSrvcInFlt">
+          <Key>
+            <PropertyRef Name="IdSrvcInFlt" />
+          </Key>
+          <Property Name="IdSrvcInFlt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFlt" Type="Int32" Nullable="false" />
+          <Property Name="IdSrvc" Type="Int32" Nullable="false" />
+          <Property Name="Val" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblFlt" Relationship="Model.tblSrvcInFlttblFlt" FromRole="tblSrvcInFlt" ToRole="tblFlt" />
+          <Property Name="tlbServiceIdSrvc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblPayments" Relationship="Model.tblPaymenttblSrvcInFlt" FromRole="tblSrvcInFlt" ToRole="tblPayment" />
+          <NavigationProperty Name="tlbService" Relationship="Model.tblSrvcInFlttlbService" FromRole="tblSrvcInFlt" ToRole="tlbService" />
+        </EntityType>
+        <EntityType Name="tblSrvcInFltHstr">
+          <Key>
+            <PropertyRef Name="IdSvcInFltHstr" />
+          </Key>
+          <Property Name="IdSvcInFltHstr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFlt" Type="Int32" Nullable="false" />
+          <Property Name="IdSrvc" Type="Int32" Nullable="false" />
+          <Property Name="Val" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tblFlt" Relationship="Model.tblSrvcInFltHstrtblFlt" FromRole="tblSrvcInFltHstr" ToRole="tblFlt" />
+          <NavigationProperty Name="tlbService" Relationship="Model.tblSrvcInFltHstrtlbService" FromRole="tblSrvcInFltHstr" ToRole="tlbService" />
+        </EntityType>
+        <EntityType Name="tblRole">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Model.AspNetUsertblRole" FromRole="tblRole" ToRole="AspNetUser" />
+        </EntityType>
+        <EntityType Name="tlbTarif">
+          <Key>
+            <PropertyRef Name="IdTarif" />
+          </Key>
+          <Property Name="IdTarif" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFlt" Type="Int32" Nullable="false" />
+          <Property Name="IdSrvc" Type="Int32" Nullable="false" />
+          <Property Name="Val" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblFlt" Relationship="Model.tlbTariftblFlt" FromRole="tlbTarif" ToRole="tblFlt" />
+          <NavigationProperty Name="tlbService" Relationship="Model.tlbTariftlbService" FromRole="tlbTarif" ToRole="tlbService" />
+        </EntityType>
+        <EntityType Name="tblTarifHstr">
+          <Key>
+            <PropertyRef Name="IdTarifHstr" />
+          </Key>
+          <Property Name="IdTarifHstr" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFlt" Type="Int32" Nullable="false" />
+          <Property Name="IdSrvc" Type="Int32" Nullable="false" />
+          <Property Name="Val" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="tblFlt" Relationship="Model.tblTarifHstrtblFlt" FromRole="tblTarifHstr" ToRole="tblFlt" />
+          <NavigationProperty Name="tlbService" Relationship="Model.tblTarifHstrtlbService" FromRole="tblTarifHstr" ToRole="tlbService" />
+        </EntityType>
+        <EntityType Name="tblControlType">
+          <Key>
+            <PropertyRef Name="IdControlType" />
+          </Key>
+          <Property Name="IdControlType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ControlType" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tblControls" Relationship="Model.tblControltblControlType" FromRole="tblControlType" ToRole="tblControl" />
+        </EntityType>
+        <EntityType Name="tblControl">
+          <Key>
+            <PropertyRef Name="IdControl" />
+          </Key>
+          <Property Name="IdControl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ControlName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IdControlType" Type="Int32" Nullable="false" />
+          <Property Name="IdFlt" Type="Int32" Nullable="false" />
+          <Property Name="ControlValue" Type="Int32" Nullable="false" />
+          <Property Name="ControlValueLog" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tblControlType" Relationship="Model.tblControltblControlType" FromRole="tblControl" ToRole="tblControlType" />
+          <NavigationProperty Name="tblFlt" Relationship="Model.tblControltblFlt" FromRole="tblControl" ToRole="tblFlt" />
+        </EntityType>
+        <EntityType Name="tblPayment">
+          <Key>
+            <PropertyRef Name="IdPayment" />
+          </Key>
+          <Property Name="IdPayment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFlt" Type="Int32" Nullable="false" />
+          <Property Name="IdSrvc" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sum" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblFlt" Relationship="Model.tblPaymenttblFlt" FromRole="tblPayment" ToRole="tblFlt" />
+          <NavigationProperty Name="tblSrvcInFlt" Relationship="Model.tblPaymenttblSrvcInFlt" FromRole="tblPayment" ToRole="tblSrvcInFlt" />
+        </EntityType>
+        <Association Name="tblFlttblBlckOfFlt">
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="*" />
+          <End Type="Model.tblBlckOfFlt" Role="tblBlckOfFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblBlckOfFlt">
+              <PropertyRef Name="IdBlckOfFlts" />
+            </Principal>
+            <Dependent Role="tblFlt">
+              <PropertyRef Name="IdBlckOfFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUsertblRole">
+          <End Type="Model.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+          <End Type="Model.tblRole" Role="tblRole" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblRole">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="AspNetUser">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUsertblFlt">
+          <End Type="Model.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlt">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="AspNetUser">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblSrvcInFlttblFlt">
+          <End Type="Model.tblSrvcInFlt" Role="tblSrvcInFlt" Multiplicity="*" />
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlt">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblSrvcInFlt">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblSrvcInFltHstrtblFlt">
+          <End Type="Model.tblSrvcInFltHstr" Role="tblSrvcInFltHstr" Multiplicity="*" />
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlt">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblSrvcInFltHstr">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblSrvcInFltHstrtlbService">
+          <End Type="Model.tblSrvcInFltHstr" Role="tblSrvcInFltHstr" Multiplicity="*" />
+          <End Type="Model.tlbService" Role="tlbService" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tlbService">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tblSrvcInFltHstr">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblControltblControlType">
+          <End Type="Model.tblControl" Role="tblControl" Multiplicity="*" />
+          <End Type="Model.tblControlType" Role="tblControlType" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblControlType">
+              <PropertyRef Name="IdControlType" />
+            </Principal>
+            <Dependent Role="tblControl">
+              <PropertyRef Name="IdControlType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblControltblFlt">
+          <End Type="Model.tblControl" Role="tblControl" Multiplicity="*" />
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlt">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblControl">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblPaymenttblFlt">
+          <End Type="Model.tblPayment" Role="tblPayment" Multiplicity="*" />
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlt">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblPayment">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblPaymenttblSrvcInFlt">
+          <End Type="Model.tblPayment" Role="tblPayment" Multiplicity="*" />
+          <End Type="Model.tblSrvcInFlt" Role="tblSrvcInFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblSrvcInFlt">
+              <PropertyRef Name="IdSrvcInFlt" />
+            </Principal>
+            <Dependent Role="tblPayment">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tlbTariftblFlt">
+          <End Type="Model.tlbTarif" Role="tlbTarif" Multiplicity="*" />
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlt">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tlbTarif">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tlbTariftlbService">
+          <End Type="Model.tlbTarif" Role="tlbTarif" Multiplicity="*" />
+          <End Type="Model.tlbService" Role="tlbService" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tlbService">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tlbTarif">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblTarifHstrtblFlt">
+          <End Type="Model.tblTarifHstr" Role="tblTarifHstr" Multiplicity="*" />
+          <End Type="Model.tblFlt" Role="tblFlt" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tblFlt">
+              <PropertyRef Name="IdFlt" />
+            </Principal>
+            <Dependent Role="tblTarifHstr">
+              <PropertyRef Name="IdFlt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblTarifHstrtlbService">
+          <End Type="Model.tblTarifHstr" Role="tblTarifHstr" Multiplicity="*" />
+          <End Type="Model.tlbService" Role="tlbService" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tlbService">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tblTarifHstr">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tblSrvcInFlttlbService">
+          <End Type="Model.tblSrvcInFlt" Role="tblSrvcInFlt" Multiplicity="*" />
+          <End Type="Model.tlbService" Role="tlbService" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="tlbService">
+              <PropertyRef Name="IdSrvc" />
+            </Principal>
+            <Dependent Role="tblSrvcInFlt">
+              <PropertyRef Name="IdSrvc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="C__MigrationHistory1">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.C__MigrationHistory)">
+        <MappingFragment StoreEntitySet="C__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetRole)">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserClaim)">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUserLogin)">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.AspNetUser)">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFlts">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblFlt)">
+        <MappingFragment StoreEntitySet="tblFlts">
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+          <ScalarProperty Name="IdBlckOfFlt" ColumnName="IdBlckOfFlt" />
+          <ScalarProperty Name="FltName" ColumnName="FltName" />
+          <ScalarProperty Name="AspNetUserId" ColumnName="AspNetUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBlckOfFlts">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblBlckOfFlt)">
+        <MappingFragment StoreEntitySet="tblBlckOfFlts">
+          <ScalarProperty Name="IdBlckOfFlts" ColumnName="IdBlckOfFlts" />
+          <ScalarProperty Name="BlckOfFltsName" ColumnName="BlckOfFltsName" />
+          <ScalarProperty Name="BlckOfFltsAddress" ColumnName="BlckOfFltsAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlbServices">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tlbService)">
+        <MappingFragment StoreEntitySet="tlbServices">
+          <ScalarProperty Name="IdSrvc" ColumnName="IdSrvc" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSrvcInFlts">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblSrvcInFlt)">
+        <MappingFragment StoreEntitySet="tblSrvcInFlts">
+          <ScalarProperty Name="IdSrvcInFlt" ColumnName="IdSrvcInFlt" />
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+          <ScalarProperty Name="IdSrvc" ColumnName="IdSrvc" />
+          <ScalarProperty Name="Val" ColumnName="Val" />
+          <ScalarProperty Name="tlbServiceIdSrvc" ColumnName="tlbServiceIdSrvc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSrvcInFltHstrs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblSrvcInFltHstr)">
+        <MappingFragment StoreEntitySet="tblSrvcInFltHstrs">
+          <ScalarProperty Name="IdSvcInFltHstr" ColumnName="IdSvcInFltHstr" />
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+          <ScalarProperty Name="IdSrvc" ColumnName="IdSrvc" />
+          <ScalarProperty Name="Val" ColumnName="Val" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoles">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblRole)">
+        <MappingFragment StoreEntitySet="tblRoles">
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlbTarifs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tlbTarif)">
+        <MappingFragment StoreEntitySet="tlbTarifs">
+          <ScalarProperty Name="IdTarif" ColumnName="IdTarif" />
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+          <ScalarProperty Name="IdSrvc" ColumnName="IdSrvc" />
+          <ScalarProperty Name="Val" ColumnName="Val" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTarifHstrs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblTarifHstr)">
+        <MappingFragment StoreEntitySet="tblTarifHstrs">
+          <ScalarProperty Name="IdTarifHstr" ColumnName="IdTarifHstr" />
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+          <ScalarProperty Name="IdSrvc" ColumnName="IdSrvc" />
+          <ScalarProperty Name="Val" ColumnName="Val" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblControlTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblControlType)">
+        <MappingFragment StoreEntitySet="tblControlTypes">
+          <ScalarProperty Name="IdControlType" ColumnName="IdControlType" />
+          <ScalarProperty Name="ControlType" ColumnName="ControlType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblControls">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblControl)">
+        <MappingFragment StoreEntitySet="tblControls">
+          <ScalarProperty Name="IdControl" ColumnName="IdControl" />
+          <ScalarProperty Name="ControlName" ColumnName="ControlName" />
+          <ScalarProperty Name="IdControlType" ColumnName="IdControlType" />
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+          <ScalarProperty Name="ControlValue" ColumnName="ControlValue" />
+          <ScalarProperty Name="ControlValueLog" ColumnName="ControlValueLog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPayments">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.tblPayment)">
+        <MappingFragment StoreEntitySet="tblPayments">
+          <ScalarProperty Name="IdPayment" ColumnName="IdPayment" />
+          <ScalarProperty Name="IdFlt" ColumnName="IdFlt" />
+          <ScalarProperty Name="IdSrvc" ColumnName="IdSrvc" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Sum" ColumnName="Sum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="Model.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="AspNetRoles_Id" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="AspNetUsers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+          <EntitySetMapping Name="C__MigrationHistory1">
+            <EntityTypeMapping TypeName="Model.C__MigrationHistory1">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
