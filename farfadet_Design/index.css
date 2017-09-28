@@ -1,13 +1,10 @@
 header {
-    background: blue;
     height: 50px;
 }
 
 article {
     background: #ffffff;
-    text-align: center;
     height: 500px;
-
 }
 
 footer {
@@ -16,27 +13,16 @@ footer {
 
 #logo {
 
-    width: 15%;
     height: 100%;
-    display: inline-block;
 }
 
 .menu {
-    list-style: none;
-    background: orange;
-    width: 85%;
     height: 100%;
-    display: inline-block;
-    text-align: center;
 }
 
 .menu * {
-    height: 100%;
-    line-height: 50px;
-    width: 20%;
+    height: 50px;
     background: gray;
-    display: inline-block;
-    vertical-align: baseline;
     border-left: 2px solid black;
 }
 
@@ -49,11 +35,6 @@ footer {
 
 .user {
     background: grey;
-}
-
-.row {
-    display: inline-block;
-    width: 1300px;
 }
 
 .block {
@@ -73,19 +54,18 @@ footer {
 .b_content {
     height: 150px;
 }
-
-.btn {
-    background: red;
-    width: 80%;
-    height: 40px;
-    cursor: pointer;
-    position: relative;
-    bottom: 5px;
+.graph {
+    display: inline-block;
+    background: lightgreen;
+    margin-top: 10px;
+    width: 600px;
+    height: 300px;
 }
 
-.btn:hover {
-    opacity: 0.8;
-    transform: scale(1.01);
-    box-shadow: 0 0 2px 4px black;
-    cursor: pointer;
+.box {
+    display: inline-block;
+    background: darkseagreen;
+    width: 250px;
+    height: 200px;
+    margin: 10px 10px 0 10px;
 }
