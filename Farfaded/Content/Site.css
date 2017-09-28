@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+  
     padding-bottom: 20px;
 }
 
@@ -14,4 +14,75 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+header {
+    height: 50px;
+}
+
+article {
+    background: #ffffff;
+    height: 500px;
+}
+
+footer {
+    background: white;
+}
+
+#logo {
+    height: 100%;
+}
+
+.menu {
+    height: 100%;
+}
+
+    .menu * {
+        height: 50px;
+        background: gray;
+        border-left: 2px solid black;
+    }
+
+        .menu *:hover {
+            opacity: 0.8;
+            transform: scale(1.01);
+            box-shadow: 0 0 2px 4px black;
+            cursor: pointer;
+        }
+
+.user {
+    background: grey;
+}
+
+.block {
+    display: inline-block;
+    background: #ffffff;
+    width: 350px;
+    height: 260px;
+    margin: 2%;
+    padding: 2%;
+    border: 1px solid black;
+}
+
+.b_header {
+    height: 30px;
+}
+
+.b_content {
+    height: 150px;
+}
+
+.graph {
+    display: inline-block;
+    background: lightgreen;
+    margin-top: 10px;
+    width: 600px;
+    height: 300px;
+}
+
+.box {
+    display: inline-block;
+    background: darkseagreen;
+    width: 250px;
+    height: 200px;
+    margin: 10px 10px 0 10px;
 }
