@@ -4,8 +4,9 @@ header {
 }
 
 article {
-    background: red;
+    background: #ffffff;
     text-align: center;
+    height: 500px;
 
 }
 
@@ -33,7 +34,7 @@ footer {
     height: 100%;
     line-height: 50px;
     width: 20%;
-    background: green;
+    background: gray;
     display: inline-block;
     vertical-align: baseline;
     border-left: 2px solid black;
@@ -47,14 +48,39 @@ footer {
 }
 
 .user {
-    background: black;
+    background: grey;
+}
+
+.row {
+    display: inline-block;
+    width: 1300px;
+}
+
+.block {
+    display: inline-block;
+    background: #ffffff;
+    width: 350px;
+    height: 260px;
+    margin: 2%;
+    padding: 2%;
+    border: 1px solid black;
+}
+
+.b_header {
+    height: 30px;
+}
+
+.b_content {
+    height: 150px;
 }
 
 .btn {
-    background: gold;
+    background: red;
     width: 80%;
     height: 40px;
     cursor: pointer;
+    position: relative;
+    bottom: 5px;
 }
 
 .btn:hover {
@@ -62,13 +88,4 @@ footer {
     transform: scale(1.01);
     box-shadow: 0 0 2px 4px black;
     cursor: pointer;
-}
-
-.block {
-    display: inline-block;
-    background: darkblue;
-    width: 350px;
-    height: 260px;
-    margin: 2%;
-    padding: 2%;
 }
