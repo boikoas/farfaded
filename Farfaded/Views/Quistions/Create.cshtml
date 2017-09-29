@@ -1,7 +1,7 @@
 ﻿@model Farfaded.Models.Quistion
 
 @{
-    ViewBag.Title = "Задать вопрос";
+    ViewBag.Title = "яяяя";
 }
 
 <h2>Create</h2>
@@ -11,53 +11,41 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Задать вопрос</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
-
+        
+            <h4>Задать вопрос</h4>
+            <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })      
         <div class="form-group">
-            @Html.LabelFor(model => model.IdFlat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Номер запроса #######</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.IdFlat, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.IdFlat, "", new { @class = "text-danger" })
+                <input class="form-control text-box single-line" id="IdQuestion" name="IdQuestion" type="number" value="">
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Question, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Question, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2">Номер квартиры</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" id="IdFlat" name="IdFlat" type="number" value="17" >
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Answer, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Answer, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Answer, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2">Вопрос</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Question, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Question, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Status)
-                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Задать" class="btn btn-default" />
                 </div>
             </div>
         </div>
+    }
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+    <div>
+        @Html.ActionLink("Вернуться", "Index")
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

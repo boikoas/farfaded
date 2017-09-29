@@ -121,7 +121,7 @@ footer {
 
 .frow {
     border: 1px solid black;
-    background: #6bda70;
+    background: #ccc;
 }
 }
 
@@ -137,4 +137,7 @@ footer {
 #telegrams {
     position: absolute;
     right: 30px;
+}
+body > div > form > div > div:nth-child(6) > label {
+    float: left;
 }

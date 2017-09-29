@@ -26,7 +26,7 @@
 
         function drawGraph(type) {
             var height = 500, 
-                width = 1000, 
+                width = $(window).width() > 500 ? $(window).width() - 250 : 350, 
                 margin=70,
                 data = [];
 
@@ -180,7 +180,3 @@
     </script>
 </div>
 
-<div class="row">
-    <div class="col-xs-4 col-lg-4 col-md-4">Задолженности</div>
-    <div class="col-xs-4 col-lg-4 col-md-4">Управление графиком</div>
-</div>
