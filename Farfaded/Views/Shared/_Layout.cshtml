@@ -20,15 +20,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/Home/Index">Logo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
            
+        @*@ViewContext.RouteData.
+        <div id="menu">
+            @foreach(var menuitem in model.menuitems){
+                <li @if(Model.CurPage == menuitem){ @:class="current_page_item"}>
+                        <a href = "@menuitem.navUrl">@menuitem.name</a>
+                                                                   </li>
+                    }
+        </div>*@
             <ul class="nav navbar-nav">
-                <li><a href="/Home/Index">Домашняя</a></li>
-                <li><a href="/SmartHouse/Index">Дом</a></li>
-                <li><a href="/User/Index">Пользователь</a></li>
-                <li><a href="/Communication/Index">Коммуникация</a></li>
+                <li id="pHome"><a href="/Home/Index">Домашняя</a></li>
+                <li id="pSmartHouse"><a href="/SmartHouse/Index">Управление домом</a></li>
+                <li id="pUser"><a href="/User/Index">Коммунальные услуги</a></li>
+                <li id="pCommunication"><a href="/Communication/Index">Общение</a></li>
                 <!-- //TODO Переделать -->
 
             </ul>
