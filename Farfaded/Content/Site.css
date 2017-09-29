@@ -80,9 +80,7 @@ footer {
 }
 
 .box {
-    display: inline-block;
     background: darkseagreen;
-    width: 250px;
     height: 200px;
     margin: 10px 10px 0 10px;
 }
@@ -106,4 +104,9 @@ footer {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.frow {
+    border: 1px solid black;
+    background: #6bda70;
 }
