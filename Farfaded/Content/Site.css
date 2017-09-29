@@ -80,9 +80,15 @@ footer {
 }
 
 .box {
-    display: inline-block;
     background: darkseagreen;
-    width: 250px;
     height: 200px;
-    margin: 10px 10px 0 10px;
+}
+
+.frow {
+    border: 1px solid black;
+    background: #6bda70;
+}
+
+.slider-selection {
+    background: #BABABA;
 }
