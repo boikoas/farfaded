@@ -16,7 +16,7 @@ namespace Farfaded.Controllers
            
             ViewBag.Status = true;
 
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "Farfadet";
 
             return View();
         }
