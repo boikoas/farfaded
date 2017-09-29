@@ -23,20 +23,23 @@
             <a class="navbar-brand" href="/Home/Index">Logo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-           
-        @*@ViewContext.RouteData.
-        <div id="menu">
-            @foreach(var menuitem in model.menuitems){
-                <li @if(Model.CurPage == menuitem){ @:class="current_page_item"}>
-                        <a href = "@menuitem.navUrl">@menuitem.name</a>
-                                                                   </li>
+            <script>
+                function highlight(){
+                    var tags=document.getElementsByTagName("li");
+                    for (i in tags) {
+                        if (tags[i].id == document.location.pathname.split('/')[1]
+                            || document.location.pathname == "/") {
+                            tags[i].className += " active";
+                            break;
+                        }
                     }
-        </div>*@
+                }
+            </script>
             <ul class="nav navbar-nav">
-                <li id="pHome"><a href="/Home/Index">Домашняя</a></li>
-                <li id="pSmartHouse"><a href="/SmartHouse/Index">Управление домом</a></li>
-                <li id="pUser"><a href="/User/Index">Коммунальные услуги</a></li>
-                <li id="pCommunication"><a href="/Communication/Index">Общение</a></li>
+                <li id="Home"><a href="/Home/Index">Домашняя</a></li>
+                <li id="SmartHouse"><a href="/SmartHouse/Index">Управление домом</a></li>
+                <li id="User"><a href="/User/Index">Коммунальные услуги</a></li>
+                <li id="Communication"><a href="/Communication/Index">Общение</a></li>
                 <!-- //TODO Переделать -->
 
             </ul>
@@ -50,8 +53,9 @@
             <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
+    
+<script>highlight()</script>
+@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
