@@ -121,6 +121,14 @@ footer {
 .frow {
     border: 1px solid black;
     background: #ccc;
+    vertical-align: middle;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.toggle {
+    float: right;
+    margin-right: 7%;
+
 }
 
 #align-right {
