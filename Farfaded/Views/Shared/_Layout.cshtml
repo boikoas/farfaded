@@ -20,15 +20,26 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/Home/Index">Logo</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-           
+            <script>
+                function highlight(){
+                    var tags=document.getElementsByTagName("li");
+                    for (i in tags) {
+                        if (tags[i].id == document.location.pathname.split('/')[1]
+                            || document.location.pathname == "/") {
+                            tags[i].className += " active";
+                            break;
+                        }
+                    }
+                }
+            </script>
             <ul class="nav navbar-nav">
-                <li><a href="/Home/Index">Домашняя</a></li>
-                <li><a href="/SmartHouse/Index">Дом</a></li>
-                <li><a href="/User/Index">Пользователь</a></li>
-                <li><a href="/Communication/Index">Коммуникация</a></li>
+                <li id="Home"><a href="/Home/Index">Домашняя</a></li>
+                <li id="SmartHouse"><a href="/SmartHouse/Index">Управление домом</a></li>
+                <li id="User"><a href="/User/Index">Коммунальные услуги</a></li>
+                <li id="Communication"><a href="/Communication/Index">Общение</a></li>
                 <!-- //TODO Переделать -->
 
             </ul>
@@ -42,8 +53,9 @@
             <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
+    
+<script>highlight()</script>
+@Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
