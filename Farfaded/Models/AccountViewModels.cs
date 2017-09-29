@@ -11,6 +11,8 @@ namespace Farfaded.Models
 
         public string Url { get; set; }
 
+        public string Accses { get; set; }
+
         public string State { get; set; }
     }
 

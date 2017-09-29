@@ -1,15 +1,16 @@
-namespace Farfaded.Migrations
+namespace Farfaded.ApplicationDbMigrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Farfaded.Models.ApplicationDbContext>
+    internal sealed class ApplicationConfiguration : DbMigrationsConfiguration<Farfaded.Models.ApplicationDbContext>
     {
-        public Configuration()
+        public ApplicationConfiguration()
         {
             AutomaticMigrationsEnabled = false;
+            MigrationsDirectory = @"ApplicationDbMigrations";
         }
 
         protected override void Seed(Farfaded.Models.ApplicationDbContext context)
