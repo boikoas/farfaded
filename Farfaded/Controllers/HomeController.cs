@@ -13,6 +13,9 @@ namespace Farfaded.Controllers
     {
         public ActionResult Index()
         {
+           
+            ViewBag.Status = false;
+
             ViewBag.Title = "Home Page";
 
             return View();
@@ -20,13 +23,20 @@ namespace Farfaded.Controllers
         [HttpPost]
         public ActionResult Login(string login, string password)
         {
-     
+
+            HttpCookie cookie = new HttpCookie("My localhost cookie");
+
+            // Установить значения в нем
+            
             if (login != "boikoas" && password != "4123")
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return Redirect("/Home/Index");
             }
             else
             {
+                cookie["Login"] = "boikoas";
+                cookie["Password"] = "4123";
+                Response.Cookies.Add(cookie);
                 return Redirect("/User/Index");
             }
 

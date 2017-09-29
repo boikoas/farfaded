@@ -1,30 +1,49 @@
 ﻿<div class="row">
-    <div class="col-lg-4">
-        <h2>Электроэнергия</h2>
-        <p>Стоимость 1 квт составляет n руб. <br>
-            Ваша задолженность составляет x руб.
+    <div class="col-lg-12">
+        <h2>Данные:</h2>
+        <p>Кв:<b>17</b><br>
+            Общая задолжность: <b>4129.44 руб.</b>
         </p>
-        <p><a class="btn btn-primary" href="/Details/Index" role="button">Подробнее &raquo;</a></p>
     </div>
-    <div class="col-lg-4">
+    <hr>
+    <div class="col-lg-6 col-md-6 col-sm-6">
         <h2>Электроэнергия</h2>
-        <p>Стоимость 1 квт составляет n руб. <br>
-            Ваша задолженность составляет x руб.
+        <p>Вы потребили: <b>426,404 Куб</b><br>
+            Стоимость 1 квт составляет<b>
+                2.3 руб.</b>
+            <br>
+            Ваша задолженность составляет<b> 980.73 руб.</b>
         </p>
-        <p><a class="btn btn-primary" href="/Details/Index" role="button">Подробнее &raquo;</a></p>
+        @Html.ActionLink("Подробнее", "Index", "Details", new { type = "energy" }, new { @class = "btn btn-primary" })
+       
     </div>
-    <div class="col-lg-4">
-        <h2>Электроэнергия</h2>
-        <p>Стоимость 1 квт составляет n руб. <br>
-            Ваша задолженность составляет x руб.
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <h2>Вода холодная</h2>
+        <p>
+            Вы потребили: <b>34,891 Куб</b><br>
+            Стоимость 1 Куб составляет <b>
+                18.20 руб. </b>
+            <br>
+            Ваша задолженность составляет<b> 635 руб.</b>
         </p>
-        <p><a class="btn btn-primary" href="/Details/Index" role="button">Подробнее &raquo;</a></p>
+        @Html.ActionLink("Подробнеe", "Index", "Details", new { type = "holvoda" }, new { @class = "btn btn-primary" })
     </div>
-    <div class="col-lg-4">
-        <h2>Электроэнергия</h2>
-        <p>Стоимость 1 квт составляет n руб. <br>
-            Ваша задолженность составляет x руб.
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <h2>Вода горячая</h2>
+        <p>
+            Вы потребили: <b>3,786 Куб</b><br>
+            Стоимость 1 Куб составляет <b>251.25 руб.</b> <br>
+            Ваша задолженность составляет <b>951.36 руб.</b>
         </p>
-        <p><a class="btn btn-primary" href="/Details/Index" role="button">Подробнее &raquo;</a></p>
+        @Html.ActionLink("Подробнее", "Index", "Details", new { type = "gorvoda" }, new { @class = "btn btn-primary" })
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <h2>Отопление</h2>
+        <p>
+            Вы потребили: <b>0.815 ГКал</b><br>
+            Стоимость 1 ГКал составляет <b>1916.34 руб.</b> <br>
+            Ваша задолженность составляет <b>1562.35 руб.</b>
+        </p>
+        @Html.ActionLink("Подробнее", "Index", "Details", new { type = "otoplenie" }, new { @class = "btn btn-primary" })
     </div>
 </div>
