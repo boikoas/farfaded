@@ -1,9 +1,9 @@
-namespace Farfaded.Migrations
+namespace Farfaded.ApplicationDbMigrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _11 : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
