@@ -5,7 +5,7 @@ using System.Web;
 using Farfaded.Models;
 using System.Data.Entity;
 
-namespace Farfaded.Data
+namespace Farfaded2.Data
 {
     public class HouseContext : DbContext
     {

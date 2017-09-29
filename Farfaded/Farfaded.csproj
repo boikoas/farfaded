@@ -237,6 +237,7 @@
     <Compile Include="Controllers\CommunicationController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuistionsController.cs" />
     <Compile Include="Controllers\SmartHouseController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -254,9 +255,16 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Interview.cs" />
     <Compile Include="Models\Questions.cs" />
+    <Compile Include="Models\QuistationContext.cs" />
+    <Compile Include="Models\Quistion.cs" />
     <Compile Include="Models\Tarifs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="QuistionsMigrations\201709291133576_Initial.cs" />
+    <Compile Include="QuistionsMigrations\201709291133576_Initial.Designer.cs">
+      <DependentUpon>201709291133576_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuistionsMigrations\Configuration.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -339,6 +347,11 @@
     <Content Include="Views\Details\Index.cshtml" />
     <Content Include="Views\SmartHouse\Index.cshtml" />
     <Content Include="Views\Communication\Index.cshtml" />
+    <Content Include="Views\Quistions\Create.cshtml" />
+    <Content Include="Views\Quistions\Delete.cshtml" />
+    <Content Include="Views\Quistions\Details.cshtml" />
+    <Content Include="Views\Quistions\Edit.cshtml" />
+    <Content Include="Views\Quistions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Api\" />
@@ -352,6 +365,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ApplicationDbMigrations\201709290647577_Initial.resx">
       <DependentUpon>201709290647577_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuistionsMigrations\201709291133576_Initial.resx">
+      <DependentUpon>201709291133576_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

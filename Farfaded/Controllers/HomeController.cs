@@ -14,7 +14,7 @@ namespace Farfaded.Controllers
         public ActionResult Index()
         {
            
-            ViewBag.Status = false;
+            ViewBag.Status = true;
 
             ViewBag.Title = "Home Page";
 
@@ -28,13 +28,13 @@ namespace Farfaded.Controllers
 
             // Установить значения в нем
             
-            if (login != "boikoas" && password != "4123")
+            if (login != "admin" && password != "4123")
             {
                 return Redirect("/Home/Index");
             }
             else
             {
-                cookie["Login"] = "boikoas";
+                cookie["Login"] = "admin";
                 cookie["Password"] = "4123";
                 Response.Cookies.Add(cookie);
                 return Redirect("/User/Index");

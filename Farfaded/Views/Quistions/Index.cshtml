@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Farfaded.Models.Quistion>
+
+@{
+    ViewBag.Title = "Вопросы";
+}
+<div id="telegrams">
+    
+      <a href="https://telegram.im/%40FarfadetBot" target="_blank" class="telegramim_button telegramim_shadow telegramim_pulse" style="font-size:30px;width:188px;background:#27A5E7;box-shadow:1px 1px 5px #27A5E7;color:#FFFFFF;border-radius:32px;" title=""><i></i> Телеграмм бот</a>
+</div>
+<h2>Вопросы к управляющей компании</h2>
+
+<p>
+    @Html.ActionLink("Задать вопрос", "Create", new {  }, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th class="hide">
+            @Html.DisplayNameFor(model => model.IdFlat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Question)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Answer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td class="hide">
+                @Html.DisplayFor(modelItem => item.IdFlat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+      
+                @Html.ActionLink("Детали", "Details", new { id=item.IdQuestion }, new { @class = "btn btn-primary" }) 
+       
+            </td>
+        </tr>
+    }
+
+</table>
+@section scripts
+{
+    <script type="text/javascript">
+    (function() {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.async = true;
+        script.src = "https://telegram.im/widget-button/index.php?id=%40FarfadetBot";
+            document.getElementsByTagName("head")[0].appendChild(script);
+        })();
+    </script>
+}
