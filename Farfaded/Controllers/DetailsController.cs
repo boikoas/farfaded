@@ -5,8 +5,9 @@ namespace Farfaded.Controllers
     public class DetailsController : Controller
     {
         // GET
-        public ActionResult Index()
+        public ActionResult Index(string type)
         {
+            ViewBag.Type = type;
             return View();
         }
     }
