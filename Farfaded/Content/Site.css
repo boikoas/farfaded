@@ -82,13 +82,31 @@ footer {
 .box {
     background: darkseagreen;
     height: 200px;
+    margin: 10px 10px 0 10px;
+}
+.align-center form {
+    width: 37%;
+    margin-left: auto;
+    margin-right: auto;
+}
+ #login {
+    margin-top: 10px;
+    margin-bottom: 10px;
+     width: 100%;
+}
+   #password {
+        margin-top: 10px;
+        margin-bottom: 10px;
+       width: 100%;
+    }
+
+.align-center .btn-block {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .frow {
     border: 1px solid black;
     background: #6bda70;
-}
-
-.slider-selection {
-    background: #BABABA;
 }

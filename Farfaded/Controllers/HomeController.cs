@@ -20,18 +20,17 @@ namespace Farfaded.Controllers
         [HttpPost]
         public ActionResult Login(string login, string password)
         {
-            var redirect ="";
+     
             if (login != "boikoas" && password != "4123")
             {
-                redirect = "/Home/Index";
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             else
             {
-                redirect = "/User/Index";
+                return Redirect("/User/Index");
             }
 
 
-            return Redirect(redirect); 
         }
     }
 }
